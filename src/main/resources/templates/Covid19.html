@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>COVID-19 India Tracker Application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="container-fluid">
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container-fluid">
+				<div class="text-center">
+					<h3 class="display-4">COVID-19 India Data</h3>
+				</div>
+				<hr class="my-4">
+				<h5>Total Number of Patients all over India :</h5>
+				<h3 th:text="${TotalNumber}"></h3>
+				<hr class="my-4">
+				<h6>New Cases Reported Today :</h6>
+				<h4 th:text="${TodayReportedNewCases}"></h4>
+				<hr class="my-4">
+				<h6>Total Cases Reported in Tamil Nadu :</h6>
+				<h4 th:text="${CasesReportedInTN}"></h4>
+				<hr class="my-4">
+				<h6>Last Updated On :</h6>
+				<h4 th:text="${LastUpdatedOn}"></h4>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<table class="table">
+		<thead class="thead-dark">
+			<tr>
+				<th>Patient Number</th>
+				<th>Reported Date</th>
+				<th>Gender</th>
+				<th>State</th>
+				<th>City</th>
+				<th>Current Status</th>
+				<th>Nationality</th>
+			</tr>
+		</thead>
+		<tr th:each="data : ${Covid19Data}">
+			<td th:text="${data.patientnumber}"></td>
+			<td th:text="${data.dateannounced}"></td>
+			<td th:text="${data.gender}"></td>
+			<td th:text="${data.detectedstate}"></td>
+			<td th:text="${data.detectedcity}"></td>
+			<td th:text="${data.currentstatus}"></td>
+			<td th:text="${data.nationality}"></td>
+		</tr>
+	</table>
+	</div>
+</body>
+
+</html>
