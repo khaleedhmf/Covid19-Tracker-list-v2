@@ -79,8 +79,6 @@ public class Covid19DataService {
 	}
 
 	private String generateDateTime() {
-//		Date date = java.util.Calendar.getInstance().getTime();
-//		return date;
 		Date today = new Date();
 		DateFormat df = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
         df.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
@@ -98,24 +96,7 @@ public class Covid19DataService {
 		return count;
 	}
 
-//	private List<Covid19Bean> getListOfBean(String array) {
-//		List<Covid19Bean> listBean = new ArrayList<>();
-//		ObjectMapper objectMapper = new ObjectMapper();
-//
-//		try {
-//			objectMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
-//			listBean = objectMapper.readValue(array, new TypeReference<List<Covid19Bean>>() {
-//			});
-//
-//		} catch (JsonParseException e) {
-//			// TODO Auto-generated catch block
-//		} catch (JsonMappingException e) {
-//			// TODO Auto-generated catch block
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//		}
-//		return listBean;
-//	}
+
 
 	public List<Covid19Bean> getBeanList() {
 		return beanList;

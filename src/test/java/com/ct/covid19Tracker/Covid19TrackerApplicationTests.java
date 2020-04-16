@@ -71,7 +71,7 @@ public class Covid19TrackerApplicationTests {
 	@Test
 	public void test_getLastUpdated() {
 		Date today = new Date();
-		DateFormat df = new SimpleDateFormat("dd-MM-yy HH:mm:SS z");
+		DateFormat df = new SimpleDateFormat("E, dd MMM yyyy HH:mm:ss z");
         df.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
 		String date = df.format(today);
 		when(service.getLastUpdated()).thenReturn(date);
