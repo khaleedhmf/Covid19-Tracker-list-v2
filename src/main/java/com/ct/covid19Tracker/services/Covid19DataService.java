@@ -71,7 +71,7 @@ public class Covid19DataService {
 		String strDate = formatter.format(date);
 		int count = 0;
 		for (Covid19Bean covid19Bean : newData) {
-			if (covid19Bean.getDateannounced().equals(strDate)) {
+			if (covid19Bean.getDateannounced().equals(strDate) && covid19Bean.getCurrentstatus() != "") {
 				count++;
 			}
 		}
@@ -89,7 +89,7 @@ public class Covid19DataService {
 	private int generateTotal(List<Covid19Bean> newData) {
 		int count = 0;
 		for (Covid19Bean covid19Bean : newData) {
-			if (covid19Bean.getDateannounced() != "") {
+			if ((covid19Bean.getDateannounced() != "") && (covid19Bean.getCurrentstatus() != "")) {
  				count++;
 			}
 		}
